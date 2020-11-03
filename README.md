@@ -5,7 +5,8 @@
 •	Your task is to create a frontend for random generated Simpson's quotes for the Simpsons-Quote API found here https://thesimpsonsquoteapi.glitch.me/
 
 # How do I get set up?
-•	Create a branch with your name or alias. Work only within your branch and create a frontend by using VueJs. (https://vuejs.org/)
+•	Create a branch with your name or alias. Work only within your branch and create a frontend by using VueJs (https://vuejs.org/).
+
 •	Include some tests in your development.
 
 # Contribution guidelines
