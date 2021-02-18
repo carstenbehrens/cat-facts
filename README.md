@@ -19,4 +19,4 @@
 •	Be creative
 
 # Who do I talk to?
-•	In case of any questions contact your fellow colleague Murat from TON: murat.bastuerk@hanseaticbank.de
+•	In case of any questions contact your fellow colleague Murat (murat.bastuerk@hanseaticbank.de) or Marc (marc.nerenberg@hanseaticbank.de) from TON :) 
