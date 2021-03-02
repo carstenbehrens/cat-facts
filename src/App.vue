@@ -72,8 +72,8 @@ body {
   margin-top: 10vh;
   height: 20vw;
   width: 50vw;
-  min-width: 300;
-  min-height: 200;
+  min-width: 300px;
+  min-height: 100px;
   background: rgb(34, 193, 195);
   background: linear-gradient(
     0deg,
