@@ -9,16 +9,19 @@
 
 <script>
 import Facts from "./components/Facts.vue";
+import CatService from "./services/catService";
+
+const catService = new CatService();
 
 export default {
   name: "App",
   components: {
-    Facts,
+    Facts
   },
   data: function() {
     return {
       isLoading: false,
-      currentCat: undefined,
+      currentCat: undefined
     };
   },
   methods: {
@@ -30,15 +33,11 @@ export default {
       */
       const randNumber = Math.floor(Math.random() * 98) + 1;
 
-      const res = await fetch(
-        `https://catfact.ninja/breeds?limit=1&page=${randNumber}`
-      );
+      const result = await catService.getBreeds(1, randNumber);
 
-      const json = await res.json();
-
-      this.currentCat = json.data[0];
-    },
-  },
+      this.currentCat = result.data[0];
+    }
+  }
 };
 </script>
 
