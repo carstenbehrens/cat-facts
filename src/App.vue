@@ -1,22 +1,27 @@
 <template>
   <div class="container">
     <button class="meow-button" v-on:click="getRandomCat">Meow</button>
-    <div v-if="currentCat">
-      <Facts v-bind:currentCat="currentCat" />
-    </div>
+    <template v-if="isLoading">
+      <Loading />
+    </template>
+    <template v-else-if="currentCat">
+      <Breed v-bind:currentCat="currentCat" v-bind:isLoading="isLoading" />
+    </template>
   </div>
 </template>
 
 <script>
-import Facts from "./components/Facts.vue";
+import Breed from "./components/Breed.vue";
 import CatService from "./services/catService";
+import Loading from "./components/Loading.vue";
 
 const catService = new CatService();
 
 export default {
   name: "App",
   components: {
-    Facts
+    Breed,
+    Loading
   },
   data: function() {
     return {
@@ -36,6 +41,7 @@ export default {
       const result = await catService.getBreeds(1, randNumber);
 
       this.currentCat = result.data[0];
+      this.isLoading = false;
     }
   }
 };
@@ -59,7 +65,9 @@ body {
   background-size: 40px 40px;
   background-repeat: repeat;
 }
+</style>
 
+<style scoped>
 .container {
   height: 100%;
   width: 100%;
@@ -69,16 +77,18 @@ body {
 }
 
 .meow-button {
-  margin-top: 10vh;
-  height: 20vw;
-  width: 50vw;
-  min-width: 300px;
-  min-height: 100px;
-  background: rgb(34, 193, 195);
-  background: linear-gradient(
-    0deg,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(253, 187, 45, 1) 100%
-  );
+  margin-top: 1rem;
+  border: none;
+  background: hsl(0 0% 93%);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  background: hotpink;
+  color: white;
+  box-shadow: 0 0.75rem 0.5rem -0.5rem hsl(0 50% 80%);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.meow-button:hover {
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 </style>
