@@ -1,6 +1,7 @@
 class CatService {
   /**
    * Get breeds
+   * See https://catfact.ninja/ for more information.
    *
    * @param {string?} limit - Limit the number of results max is 1000 per page, default is one.
    * @param {number?} page - Which page to display max is 98, default is one.
