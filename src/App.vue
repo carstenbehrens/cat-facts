@@ -4,8 +4,12 @@
     <template v-if="isLoading">
       <Loading />
     </template>
-    <template v-else-if="currentCat">
-      <Breed v-bind:currentCat="currentCat" v-bind:isLoading="isLoading" />
+    <template v-else-if="currentCat && catImage">
+      <Breed
+        v-bind:currentCat="currentCat"
+        v-bind:isLoading="isLoading"
+        v-bind:catImage="catImage"
+      />
     </template>
   </div>
 </template>
@@ -13,9 +17,11 @@
 <script>
 import Breed from "./components/Breed.vue";
 import CatService from "./services/catService";
+import ImageService from "./services/imageService";
 import Loading from "./components/Loading.vue";
 
 const catService = new CatService();
+const imageService = new ImageService();
 
 export default {
   name: "App",
@@ -26,7 +32,8 @@ export default {
   data: function() {
     return {
       isLoading: false,
-      currentCat: undefined
+      currentCat: undefined,
+      catImage: undefined
     };
   },
   methods: {
@@ -38,9 +45,20 @@ export default {
       */
       const randNumber = Math.floor(Math.random() * 98) + 1;
 
-      const result = await catService.getBreeds(1, randNumber);
+      const catResult = await catService.getBreeds(1, randNumber);
 
-      this.currentCat = result.data[0];
+      const catData = catResult.data[0];
+
+      const { results } = await imageService.search(`${catData.breed} cat`);
+
+      const imageData = {
+        height: results[0].height,
+        src: results[0].urls.small,
+        width: [0].width
+      };
+
+      this.currentCat = catData;
+      this.catImage = imageData;
       this.isLoading = false;
     }
   }
@@ -77,6 +95,7 @@ body {
 }
 
 .meow-button {
+  cursor: pointer;
   margin-top: 1rem;
   border: none;
   background: hsl(0 0% 93%);

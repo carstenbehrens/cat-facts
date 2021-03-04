@@ -12,30 +12,37 @@
     <div class="breed-container__entry">
       {{ currentCat.country }}
     </div>
+    <div class="breed-container__image">
+      <CatImage :catImage="catImage" />
+    </div>
   </div>
 </template>
 
 <script>
+import CatImage from "./CatImage";
+
 export default {
   name: "Breed",
+  components: {
+    CatImage
+  },
   props: {
     currentCat: Object,
-    test: String
+    catImage: Object
   }
 };
 </script>
 
 <style scoped>
 .breed-container {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.815);
   border-radius: 2px;
   display: inline-block;
-  height: 300px;
   margin-top: 1rem;
   position: relative;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -51,5 +58,9 @@ export default {
   margin-left: 1rem;
   font-weight: bold;
   margin-top: 1rem;
+}
+
+.breed-container__image {
+  margin: 1rem;
 }
 </style>
