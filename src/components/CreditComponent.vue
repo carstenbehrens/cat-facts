@@ -1,5 +1,5 @@
 <template>
-  <p class="credits">
+  <p class="CreditComponent">
     <template v-if="prefix"> {{ prefix }}&nbsp; </template>
     <template v-if="name">
       {{ name }}
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "Credits",
+  name: "CreditComponent",
   props: {
     prefix: String,
     name: String,
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style scoped>
-.credits {
+.CreditComponent {
   color: #70757a;
   font-size: 14px;
 }

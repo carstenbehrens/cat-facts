@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Image",
+  name: "ImageComponent",
   props: {
     src: String,
     height: Number,

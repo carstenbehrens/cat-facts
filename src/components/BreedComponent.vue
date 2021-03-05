@@ -14,13 +14,13 @@
     </div>
     <div class="breed-container__image">
       <a :href="catImage.link">
-        <Image
+        <ImageComponent
           :height="catImage.height"
           :width="catImage.width"
           :src="catImage.src"
         />
       </a>
-      <Credits
+      <CreditComponent
         prefix="Photo by:"
         :name="catImage.user.name"
         suffix="on Unsplash"
@@ -30,14 +30,14 @@
 </template>
 
 <script>
-import Image from "./Image";
-import Credits from "./Credits";
+import ImageComponent from "./ImageComponent";
+import CreditComponent from "./CreditComponent";
 
 export default {
-  name: "Breed",
+  name: "BreedComponent",
   components: {
-    Image,
-    Credits,
+    ImageComponent,
+    CreditComponent,
   },
   props: {
     currentCat: Object,

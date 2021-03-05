@@ -2,10 +2,10 @@
   <div class="container">
     <button class="meow-button" v-on:click="getRandomCat">Meow</button>
     <template v-if="isLoading">
-      <Loading />
+      <LoadingComponent />
     </template>
     <template v-else-if="currentCat && catImage">
-      <Breed
+      <BreedComponent
         v-bind:currentCat="currentCat"
         v-bind:isLoading="isLoading"
         v-bind:catImage="catImage"
@@ -15,10 +15,10 @@
 </template>
 
 <script>
-import Breed from "./components/Breed.vue";
+import BreedComponent from "./components/BreedComponent.vue";
 import CatService from "./services/catService";
 import ImageService from "./services/imageService";
-import Loading from "./components/Loading.vue";
+import LoadingComponent from "./components/LoadingComponent.vue";
 
 const catService = new CatService();
 const imageService = new ImageService();
@@ -26,8 +26,8 @@ const imageService = new ImageService();
 export default {
   name: "App",
   components: {
-    Breed,
-    Loading,
+    BreedComponent,
+    LoadingComponent,
   },
   data: function() {
     return {

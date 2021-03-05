@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: "Loading"
+  name: "LoadingComponent",
 };
 </script>
 
