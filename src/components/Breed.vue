@@ -13,23 +13,27 @@
       {{ currentCat.country }}
     </div>
     <div class="breed-container__image">
-      <CatImage :catImage="catImage" />
+      <Image
+        :height="catImage.height"
+        :width="catImage.width"
+        :src="catImage.src"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import CatImage from "./CatImage";
+import Image from "./Image";
 
 export default {
   name: "Breed",
   components: {
-    CatImage
+    Image,
   },
   props: {
     currentCat: Object,
-    catImage: Object
-  }
+    catImage: Object,
+  },
 };
 </script>
 
