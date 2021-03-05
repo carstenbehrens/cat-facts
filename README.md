@@ -1,6 +1,6 @@
 # casting-ton
 
-This project is a simple exemplary vue application. It uses the [Catfacts](https://catfact.ninja/)- and [Unsplash](https://unsplash.com/developers)-API's to get a random cat breed and load a picture of that breed.
+This project is a simple exemplary vue application. It uses the [Catfacts](https://catfact.ninja/) API and the [Unsplash](https://unsplash.com/developers) API to get a random cat breed and load a picture of that breed.
 
 ## Todo
 
