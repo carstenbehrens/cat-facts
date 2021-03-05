@@ -58,7 +58,7 @@ export default {
         src: img.urls.small,
         width: img.width,
         alt: img.alt_description,
-        user: img.user,
+        username: img.user.name,
         link: img.links.html,
       };
 

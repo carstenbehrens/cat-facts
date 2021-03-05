@@ -22,7 +22,7 @@
       </a>
       <CreditComponent
         prefix="Photo by:"
-        :name="catImage.user.name"
+        :name="catImage.username"
         suffix="on Unsplash"
       />
     </div>
@@ -40,8 +40,21 @@ export default {
     CreditComponent,
   },
   props: {
-    currentCat: Object,
-    catImage: Object,
+    currentCat: {
+      breed: String,
+      country: String,
+      origin: String,
+      coat: String,
+      pattern: String,
+    },
+    catImage: {
+      height: Number,
+      src: String,
+      width: Number,
+      alt: String,
+      username: String,
+      link: String,
+    },
   },
 };
 </script>

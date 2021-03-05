@@ -12,9 +12,18 @@
 export default {
   name: "CreditComponent",
   props: {
-    prefix: String,
-    name: String,
-    suffix: String,
+    prefix: {
+      type: String,
+      required: false,
+    },
+    name: {
+      type: String,
+      required: false,
+    },
+    suffix: {
+      type: String,
+      required: false,
+    },
   },
 };
 </script>

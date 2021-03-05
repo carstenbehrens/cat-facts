@@ -8,9 +8,18 @@
 export default {
   name: "ImageComponent",
   props: {
-    src: String,
-    height: Number,
-    width: Number,
+    src: {
+      type: String,
+      required: true,
+    },
+    height: {
+      type: Number,
+      required: true,
+    },
+    width: {
+      type: Number,
+      required: true,
+    },
   },
 };
 </script>
