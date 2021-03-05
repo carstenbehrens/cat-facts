@@ -27,13 +27,13 @@ export default {
   name: "App",
   components: {
     Breed,
-    Loading
+    Loading,
   },
   data: function() {
     return {
       isLoading: false,
       currentCat: undefined,
-      catImage: undefined
+      catImage: undefined,
     };
   },
   methods: {
@@ -51,17 +51,22 @@ export default {
 
       const { results } = await imageService.search(`${catData.breed} cat`);
 
+      const img = results[0];
+
       const imageData = {
-        height: results[0].height,
-        src: results[0].urls.small,
-        width: [0].width
+        height: img.height,
+        src: img.urls.small,
+        width: img.width,
+        alt: img.alt_description,
+        user: img.user,
+        link: img.links.html,
       };
 
       this.currentCat = catData;
       this.catImage = imageData;
       this.isLoading = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

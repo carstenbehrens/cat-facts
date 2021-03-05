@@ -13,10 +13,17 @@
       {{ currentCat.country }}
     </div>
     <div class="breed-container__image">
-      <Image
-        :height="catImage.height"
-        :width="catImage.width"
-        :src="catImage.src"
+      <a :href="catImage.link">
+        <Image
+          :height="catImage.height"
+          :width="catImage.width"
+          :src="catImage.src"
+        />
+      </a>
+      <Credits
+        prefix="Photo by:"
+        :name="catImage.user.name"
+        suffix="on Unsplash"
       />
     </div>
   </div>
@@ -24,11 +31,13 @@
 
 <script>
 import Image from "./Image";
+import Credits from "./Credits";
 
 export default {
   name: "Breed",
   components: {
     Image,
+    Credits,
   },
   props: {
     currentCat: Object,
