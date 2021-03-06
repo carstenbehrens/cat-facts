@@ -6,9 +6,9 @@
     </template>
     <template v-else-if="currentCat && catImage">
       <BreedComponent
-        v-bind:currentCat="currentCat"
-        v-bind:isLoading="isLoading"
-        v-bind:catImage="catImage"
+        :currentCat="currentCat"
+        :isLoading="isLoading"
+        :catImage="catImage"
       />
     </template>
   </div>
