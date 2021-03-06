@@ -4,7 +4,8 @@ This project is a simple exemplary vue application. It uses the [Catfacts](https
 
 ## Todo
 
-- Add unit tests [ ]
+- Add more unit tests [ ]
+- Add dependency injection to App.vue for easier testing [ ]
 - Add End-to-End tests [ ]
 - Add pre-commit hooks for linting [ ]
 
@@ -32,6 +33,12 @@ npm run build
 
 ```shell
 npm run lint
+```
+
+### Run unit tests
+
+```shell
+npm run test:unit
 ```
 
 ### Customize configuration
