@@ -1,5 +1,5 @@
 {
-  "name": "casting-ton",
+  "name": "hello-world",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,14 +10,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "dotenv": "^8.2.0",
-    "vue": "^3.0.0",
-    "vue-material": "^1.0.0-beta-15"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "^4.5.11",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/test-utils": "^2.0.0-0",
