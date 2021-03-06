@@ -4,9 +4,9 @@
     <template v-if="isLoading">
       <LoadingComponent />
     </template>
-    <template v-else-if="currentCat && catImage">
+    <template v-else-if="catData && catImage">
       <BreedComponent
-        :currentCat="currentCat"
+        :catData="catData"
         :isLoading="isLoading"
         :catImage="catImage"
       />
@@ -32,7 +32,7 @@ export default {
   data: function() {
     return {
       isLoading: false,
-      currentCat: undefined,
+      catData: undefined,
       catImage: undefined,
     };
   },
@@ -45,9 +45,9 @@ export default {
       */
       const randNumber = Math.floor(Math.random() * 98) + 1;
 
-      const catResult = await catService.getBreeds(1, randNumber);
+      const catApiResult = await catService.getBreeds(1, randNumber);
 
-      const catData = catResult.data[0];
+      const catData = catApiResult.data[0];
 
       const { results } = await imageService.search(`${catData.breed} cat`);
 
@@ -62,7 +62,7 @@ export default {
         link: img.links.html,
       };
 
-      this.currentCat = catData;
+      this.catData = catData;
       this.catImage = imageData;
       this.isLoading = false;
     },

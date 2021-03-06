@@ -4,13 +4,13 @@
       Breed:
     </div>
     <div class="breed-container__entry">
-      {{ currentCat.breed }}
+      {{ catData.breed }}
     </div>
-    <div v-if="currentCat.country" class="breed-container__heading">
+    <div v-if="catData.country" class="breed-container__heading">
       Country:
     </div>
-    <div v-if="currentCat.country" class="breed-container__entry">
-      {{ currentCat.country }}
+    <div v-if="catData.country" class="breed-container__entry">
+      {{ catData.country }}
     </div>
     <div class="breed-container__image">
       <a :href="catImage.link">
@@ -40,7 +40,7 @@ export default {
     CreditComponent,
   },
   props: {
-    currentCat: {
+    catData: {
       breed: {
         type: String,
         required: true,
