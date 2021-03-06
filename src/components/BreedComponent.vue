@@ -12,7 +12,7 @@
     <div v-if="catData.country" class="breed-container__entry">
       {{ catData.country }}
     </div>
-    <div class="breed-container__image">
+    <div v-if="catImage" class="breed-container__image">
       <a :href="catImage.link">
         <ImageComponent
           :height="catImage.height"
