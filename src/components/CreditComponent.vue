@@ -1,5 +1,5 @@
 <template>
-  <p class="CreditComponent">
+  <p class="credit-component">
     <template v-if="prefix"> {{ prefix }}&nbsp; </template>
     <template v-if="name">
       {{ name }}
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-.CreditComponent {
+.credit-component {
   color: #70757a;
   font-size: 14px;
 }
