@@ -1,10 +1,10 @@
 <template>
   <p class="credit-component">
-    <template v-if="prefix"> {{ prefix }}&nbsp; </template>
+    <template v-if="prefix"> {{ prefix }}&nbsp;</template>
     <template v-if="name">
       {{ name }}
     </template>
-    <template v-if="suffix"> &nbsp;{{ suffix }} </template>
+    <template v-if="suffix">&nbsp;{{ suffix }} </template>
   </p>
 </template>
 
