@@ -6,10 +6,10 @@
     <div class="breed-container__entry">
       {{ currentCat.breed }}
     </div>
-    <div class="breed-container__heading">
+    <div v-if="currentCat.country" class="breed-container__heading">
       Country:
     </div>
-    <div class="breed-container__entry">
+    <div v-if="currentCat.country" class="breed-container__entry">
       {{ currentCat.country }}
     </div>
     <div class="breed-container__image">
@@ -41,19 +41,52 @@ export default {
   },
   props: {
     currentCat: {
-      breed: String,
-      country: String,
-      origin: String,
-      coat: String,
-      pattern: String,
+      breed: {
+        type: String,
+        required: true,
+      },
+      country: {
+        type: String,
+        required: false,
+      },
+      origin: {
+        type: String,
+        required: false,
+      },
+      coat: {
+        type: String,
+        required: false,
+      },
+      pattern: {
+        type: String,
+        required: false,
+      },
     },
     catImage: {
-      height: Number,
-      src: String,
-      width: Number,
-      alt: String,
-      username: String,
-      link: String,
+      height: {
+        type: Number,
+        required: true,
+      },
+      src: {
+        type: String,
+        required: true,
+      },
+      width: {
+        type: Number,
+        required: true,
+      },
+      alt: {
+        type: String,
+        required: false,
+      },
+      username: {
+        type: String,
+        required: true,
+      },
+      link: {
+        type: String,
+        required: true,
+      },
     },
   },
 };
