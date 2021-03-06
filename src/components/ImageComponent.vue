@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <img :height="height" :width="width" :src="src" />
+    <img :height="height" :width="width" :src="src" :alt="alt" />
   </div>
 </template>
 
@@ -19,6 +19,10 @@ export default {
     width: {
       type: Number,
       required: true,
+    },
+    alt: {
+      type: String,
+      required: false,
     },
   },
 };
