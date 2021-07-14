@@ -12,14 +12,14 @@ describe("#catService", () => {
     test("calls the API with the default query params", async () => {
       await catService.getBreeds();
       expect(global.fetch).toHaveBeenCalledWith(
-        "https://catfact.ninja/breeds?limit=1&page=1"
+        "http://localhost:3000/breeds?_limit=1&_page=1"
       );
     });
 
     test("calls the API with the correct query params", async () => {
       await catService.getBreeds(3, 12);
       expect(global.fetch).toHaveBeenCalledWith(
-        "https://catfact.ninja/breeds?limit=3&page=12"
+        "http://localhost:3000/breeds?_limit=3&_page=12"
       );
     });
   });

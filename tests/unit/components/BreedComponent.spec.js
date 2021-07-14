@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import BreedComponent from "@/components/BreedComponent.vue";
+import BreedComponent from "@/components/BreedComponent/BreedComponent.vue";
 
 describe("BreedComponent.vue", () => {
   test("renders props.catData when passed", () => {
@@ -15,10 +15,10 @@ describe("BreedComponent.vue", () => {
       props: { catData },
     });
 
-    expect(wrapper.find(".breed-container__entry").text()).toMatch(
+    expect(wrapper.find(".data").text()).toMatch(
       catData.breed
     );
-    expect(wrapper.findAll(".breed-container__entry")[1].text()).toMatch(
+    expect(wrapper.findAll(".data")[1].text()).toMatch(
       catData.country
     );
   });
