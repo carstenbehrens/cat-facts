@@ -1,17 +1,21 @@
 <template>
   <div class="breed-container">
-    <div class="breed-container__heading">
-      Breed:
-    </div>
-    <div class="breed-container__entry">
-      {{ catData.breed }}
-    </div>
-    <div v-if="catData.country" class="breed-container__heading">
-      Country:
-    </div>
-    <div v-if="catData.country" class="breed-container__entry">
+    <BreedComponentEntry>
+      <template v-slot:type>
+        Breed:
+      </template>
+      <template v-slot:data>
+        {{ catData.breed }}
+      </template>
+    </BreedComponentEntry>
+    <BreedComponentEntry v-if="catData.country">
+      <template v-slot:type>
+        Country:
+      </template>
+      <template v-slot:data>
       {{ catData.country }}
-    </div>
+      </template>
+    </BreedComponentEntry>
     <div v-if="catImage" class="breed-container__image">
       <a :href="catImage.link">
         <ImageComponent
@@ -30,12 +34,14 @@
 </template>
 
 <script>
-import ImageComponent from "./ImageComponent";
-import CreditComponent from "./CreditComponent";
+import ImageComponent from "../ImageComponent.vue";
+import CreditComponent from "../CreditComponent.vue";
+import BreedComponentEntry from "./BreedComponentEntry.vue";
 
 export default {
   name: "BreedComponent",
   components: {
+    BreedComponentEntry,
     ImageComponent,
     CreditComponent,
   },
@@ -108,16 +114,6 @@ export default {
 
 .breed-container:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.breed-container__entry {
-  margin-left: 1rem;
-}
-
-.breed-container__heading {
-  margin-left: 1rem;
-  font-weight: bold;
-  margin-top: 1rem;
 }
 
 .breed-container__image {

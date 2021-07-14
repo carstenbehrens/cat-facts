@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import BreedComponent from "./components/BreedComponent.vue";
+import BreedComponent from "./components/BreedComponent/BreedComponent.vue";
 import CatService from "./services/catService";
 import ImageService from "./services/imageService";
 import LoadingComponent from "./components/LoadingComponent.vue";
