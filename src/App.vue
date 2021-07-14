@@ -45,9 +45,7 @@ export default {
       */
       const randNumber = Math.floor(Math.random() * 98) + 1;
 
-      const catApiResult = await catService.getBreeds(1, randNumber);
-
-      const catData = catApiResult.data[0];
+      const catData = (await catService.getBreeds(1, randNumber))[0];
 
       const { results } = await imageService.search(`${catData.breed} cat`);
 
